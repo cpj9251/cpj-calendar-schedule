@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "cpj-calendar-schedule/cpj-calendar-schedule",
+	"version": "0.1.2",
+	"title": "CPJ Calendar Scheduler",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "This block displays calendar to pick date then displays time available for that day for scheduling appointments",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "cpj-calendar-schedule",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

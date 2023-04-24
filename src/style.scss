@@ -1,0 +1,51 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-cpj-calendar-schedule-cpj-calendar-schedule {
+width:400px;
+background-color:#78858f;
+border:1px solid #333333;
+border-radius:10px;
+}
+.wp-block-cpj-calendar-schedule-cpj-calendar-schedule::after{
+	clear:both;
+	content:'';
+	display:table;
+}
+.calendar-outside-container{
+	display:block;
+}
+.time-slot-box{
+	
+	display:block;
+	margin:4px auto;
+}
+.time-slot-box::after{
+	clear:both;
+	content:'';
+	display:table;
+}
+.time-slot-btn{
+	border:1px solid #333333;
+	border-radius:6px;
+	background-color:rgb(193, 204, 218) ;
+	margin:4px;
+	float:left;
+	font-size:16px;
+	line-height:18px;
+	margin:6px;
+	padding:3px;
+	width:80px;
+}
+.time-slot-outside-container{
+	margin-top:30px;
+	padding:20px;
+	border:2px solid #000000;
+	border-radius:10px;
+	background-color:#eae1b9;
+	float:left;
+}
