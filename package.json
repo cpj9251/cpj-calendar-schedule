@@ -15,8 +15,7 @@
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^25.4.0",
-		"prettier": "2.8.8"
+		"@wordpress/scripts": "^25.4.0"
 	},
 	"dependencies": {
 		"@wordpress/element": "^5.4.0",

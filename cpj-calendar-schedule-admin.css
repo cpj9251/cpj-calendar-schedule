@@ -1,7 +1,7 @@
 /*************
  * CSS File for admin stylesheets for CPJ Schedule Plugin
  * Author: Paul Jarvis
- * ver: 0.1.0
+ * ver: 2.0.0
  * License: gpl. gnu
  */
 
@@ -55,3 +55,232 @@
 #lpm-confirm-appt-subject{
     width:350px;
 }
+.appt-time-settings-box{
+width:90%;
+margin:10px auto;
+}
+.appt-time-settings-box::after{
+   content:'';
+   clear:both;
+   display:table;
+}
+.appt-time-inner-box{
+   display:block;
+   float:left;
+   border:1px solid #333333;
+   border-radius:10px;
+   padding:20px;
+   background-color:rgb(212, 221, 229);
+
+}
+.appt-time-inner-box td{
+   padding:3px;
+}
+.appt-time-settings-btn{
+    width:80px;
+  height:70;
+   background-color: #6e7e85;
+   color:#333333;
+   border-radius:10px;
+}
+.appt-time-settings-btn-sel{
+   background-color:rgb(118, 187, 247);
+   color:#fefefe;
+   font-weight:bold;
+   width:80px;
+    height:70;
+    border-radius:10px;
+}
+button:hover{
+   cursor:pointer;
+}
+
+.cpj-calendar-box{
+    width:250px;
+    border:2px solid #333333;
+    border-radius:10px;
+
+ }
+ .cal-header{
+    width:100%;
+    padding:0;
+    margin-left:10px;
+ }
+ .cal-header{
+    margin:0px auto;
+    text-align:center;
+ }
+.calendar-header{
+    width:315px;;
+    padding:10px;
+    border:2px solid #333333;
+    border-width:0px 0px 2px 0px;
+}
+.prev-mon-btn{
+    float:left;
+    margin:0px;
+    margin-right:20px;
+    border:1px solid #333333;
+    border-radius:5px;
+    width:25px;
+    text-align:center;
+    
+}
+.mon-title{
+    float:left;
+    color:#112244;
+    margin-left:20%;
+}
+
+.next-mon-btn{
+    float:right;
+    border:1px solid #333333;
+    border-radius:5px;
+    width:25px;
+    text-align:center;
+}
+.next-mon-btn:hover,.prev-mon-btn:hover{
+    font-weight:bold;
+    cursor:pointer;
+   background-color:#b4bdcd;
+}
+.calendar-header::after{
+    content:'';
+    clear:both;
+    display:table;
+}
+.dow-header{
+    width:100%;
+    padding:4px;
+    border:1px solid #333333;
+    border-width: 0px 0px 2px 0px;
+}
+.dow-title{
+    width:45px;
+   
+    margin:0px;
+    text-align:center;
+    font-size:12px;
+    color:#112244;
+}
+.dow-header::after{
+    content:'';
+    clear:both;
+    display:table;
+}
+.mon-days{
+   /* width:35px;*/
+   background-color: #7595c2;
+    border:1px solid #333333;
+    border-radius:5px;
+ /*   margin:3px; */
+    text-align:center;
+}
+.mon-days:hover, .mon-days-sel{
+    cursor:pointer;
+    box-shadow:4px 4px 10px rgba(0,0,0,0.7);
+    background-color:#f5f1b1;
+}
+.mon-days-today{
+    background-color:#f5f1b1 !important;
+   
+}
+
+.cpj-time-box{
+   
+    margin:10px;
+    width:300px;
+    margin-left:30px;
+ }
+ .cpj-time-box::after{
+    content:'';
+    clear:both;
+    display:table;
+
+ }
+ .time-btn{
+    width:60px;
+    font-size:14px;
+    line-height:18px;
+    text-align:center;
+    border:1px solid #333333;
+    border-radius:5px;
+    background-color: #b4bdcd;
+    margin:4px;
+ }
+ .time-btn:hover{
+    background-color:#75a1e8;
+    box-shadow:4px 4px 7px rgba(0,0,0,0.7);
+    cursor:pointer;
+ }
+ .time-btn-disabled{
+    background-color:#747171;
+    color:rgb(138, 140, 142);
+    text-decoration: line-through;
+    width:60px;
+    font-size:14px;
+    line-height:18px;
+    text-align:center;
+    border:1px solid #333333;
+    border-radius:5px;
+    margin:4px;
+}
+ .pick-a-date{
+    margin-left:20px;
+    color:#112244;
+ }
+#pick-a-time-text{
+    margin-left:10px;
+    display:none;
+ }
+ .outer-cal-box, .outer-time-box{
+    float:left;
+    margin:5px;
+    color:#112244;
+ }
+ .time-btn-sel{
+    background-color:#75a1e8;
+    box-shadow:4px 4px 7px rgba(0,0,0,0.7);
+
+ }
+ #pick-a-date-holder,#pick-a-time-holder{
+    color:#ececec;
+    margin-left:3px;
+ }
+ .next-btn{
+    width:120px;
+    height:40px;
+    border:2px solid #33528f;
+    border-radius:6px;
+    background-color:#75a1e8;
+    color:#252429;
+    font-size:18px;
+    line-height:42px;
+    display:none;
+    text-align:center;
+    margin:20px auto;
+    vertical-align: center;
+    
+ }
+ .next-btn:hover{
+    box-shadow:4px 4px 7px rgba(0,0,0,0.7);
+    cursor:pointer;
+ }
+ .appt-time-daily-settings-box{
+   margin:80px 0px 20px 67px;
+   width:80%;
+   padding:10px;
+   padding-bottom:30px;
+   border:1px solid #333333;
+   border-radius:10px;
+ }
+ #cpj-admin-cal{
+   display:block;
+   float:left;
+ }
+ #cpj-admin-time{
+   display:block;
+   float:left;
+   width:40%;
+   margin:40px 0px 0px 30px;
+ }

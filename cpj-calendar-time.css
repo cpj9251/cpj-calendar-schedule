@@ -1,9 +1,9 @@
 /**
  * Plugin Name:       CPJ Calendar Scheduler
- * Description:       This block displays calendar to pick date then displays time available for booking
+ * Description:       This block displays calendar to pick date then displays time available for appointment scheduling
  * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           0.1.0
+ * Version:           2.0.0
  * Author:            Paul Jarvis
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -13,8 +13,9 @@
  */
 
 .wp-block-cpj-calendar-schedule-cpj-calendar-schedule{
-    width:50%;
-    margin:10px;
+    background-color:#b1c8da !important;
+    box-shadow:7px 7px 5px rgb(0,0,0,0.5);
+    width:600px !important;
 
 }
 .wp-block-cpj-calendar-schedule-cpj-calendar-schedule::after{
@@ -26,6 +27,7 @@
     width:250px;
     border:2px solid #333333;
     border-radius:10px;
+    background-color:#cdd4da;
 
  }
  .cal-header{
@@ -102,7 +104,7 @@
  /*   margin:3px; */
     text-align:center;
 }
-.mon-days:hover{
+.mon-days:hover, .mon-days-sel{
     cursor:pointer;
     box-shadow:4px 4px 10px rgba(0,0,0,0.7);
     background-color:#f5f1b1;
@@ -113,10 +115,9 @@
 }
 
 .cpj-time-box{
-   
-    margin:10px;
+    margin:5px 0px 5px -21px;
+    text-align:center;
     width:300px;
-    margin-left:30px;
  }
  .cpj-time-box::after{
     content:'';
@@ -161,7 +162,7 @@
  }
  .outer-cal-box, .outer-time-box{
     float:left;
-    margin:5px;
+    margin:10px 0px 10px 170px;
     color:#112244;
  }
  .time-btn-sel{
@@ -170,7 +171,7 @@
 
  }
  #pick-a-date-holder,#pick-a-time-holder{
-    color:#ececec;
+
     margin-left:3px;
  }
  .next-btn{
@@ -184,7 +185,7 @@
     line-height:42px;
     display:none;
     text-align:center;
-    margin:20px auto;
+    margin:20px 0px 20px 55px;
     vertical-align: center;
     
  }
@@ -233,7 +234,7 @@ option{
     line-height:18px;
 }
 #cpj-cust-form-submit-btn{
-    margin:10px 0px 10px 200px;
+    margin:43px 0px 10px 96px;
     width:120px;
     height:40px;
     border:2px solid #33528f;
@@ -269,37 +270,62 @@ option{
 }
 @media only screen and (max-width:480px){
     .wp-block-cpj-calendar-schedule-cpj-calendar-schedule{
-        width:90%;
-        margin:5px auto;
+    position:absolute;
+    top:188px;
+    left:-16px;
+    width:350px !important;
     }
     .cpj-calendar-box{
-        margin-left:40px;
+        margin-left:0px;
+        width:280px !important;
     }
     #cpj-cust-form-submit-btn{
         margin-left:100px;
     }
     #error-msg-box{
         margin-left:10px;
+        font-size:0.9rem !important;
+    }
+    .prev-mon-btn, .next-mon-btn{
+        width:40px;
+    }
+    .calendar-header{
+        width:250px;
+    }
+    .outer-cal-box, .outer-time-box{
+        margin:10px 0px 10px 60px;
     }
 }
 
 @media only screen and (min-width:481px) and (max-width:780px){
     .wp-block-cpj-calendar-schedule-cpj-calendar-schedule{
-        width:50%;
+        width:600px;
         margin:5px auto;
     }
     .cpj-calendar-box{
         margin-left:40px;
     }
- 
+     .cpj-time-box{
+        margin:5px 0px 0px 20px;
+    }
+        .prev-mon-btn, .next-mon-btn{
+        width:40px;
+    }
+    #error-msg-box{
+        font-size:0.9rem !important;
+    }
+
 }
 @media only screen and (min-width:781px) and (max-width:1040px){
     .wp-block-cpj-calendar-schedule-cpj-calendar-schedule{
-        width:80%;
+        width:600px;
         margin:5px auto;
     }
     .cpj-calendar-box{
         margin-left:40px;
+    }
+    .cpj-time-box{
+        margin:5px 0px 0px 20px;
     }
 
 }

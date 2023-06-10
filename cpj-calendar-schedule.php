@@ -1,11 +1,13 @@
 <?php
 /**
  * Plugin Name:       CPJ Calendar Appointment Scheduler
- * Description:       This plugin creates a block that can be added to any page or post. The block creates a calendar with selectable dates which then display a list of times that are selectable and then collects contact information. On successful collection of date, time and contact information, en e-mail is sent to customer confirming appointment date and an e-mail is sent to admin notifying user of new appointment. E-mail content and notify email address are customizable via admin options page.
+ * Plugin URI:		  https://cpauljarvis.com
+ * Description:       This plugin creates a block that can be added to any page or post. The block creates a calendar with selectable dates which then display a list of times that are selectable and then collects contact information. On successful collection of date, time and contact information, an e-mail is sent to customer confirming appointment date and an e-mail is sent to admin notifying user of new appointment. E-mail content and notify email address are customizable via admin options page. Version 2 adds administration tools, can now view customer list and upcoming appointments, can modify customer, add new appointments, and delete appointments and customers. Also scheduling options have been added to set global times available and also can block out times on a individual day. Instructions for use: In page or post click add a block. search for 'cpj' and select CPJ Calendar Scheduler.
  * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           0.1.2
+ * Version:           2.0.0
  * Author:            Paul Jarvis
+ * Author URI:		  https://cpauljarvis.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       cpj-calendar-schedule
@@ -27,6 +29,7 @@
 
 
 include("cpj-schedule-admin.php");
+include("cpj-appt-admin.php");
 
 function cpj_calendar_schedule_cpj_calendar_schedule_block_init() {
 	register_block_type( __DIR__ . '/build' );
@@ -57,6 +60,8 @@ function cpj_calendar_time_enqueue($hook){
 }//end fx
 
 add_action('wp_enqueue_scripts', 'cpj_calendar_time_enqueue');
+
+
 
 register_activation_hook(__FILE__,'cpj_schedule_db_setup');
 
@@ -127,6 +132,17 @@ function cpj_schedule_db_setup(){
 			PRIMARY KEY (id)
 			);";
 	maybe_create_table($tblName, $sql);
+	
+	$tblName = 'wp_cpj_schedule_day_time';
+
+    $sql = "CREATE TABLE " . $tblName . " (
+            id int NOT NULL AUTO_INCREMENT,
+            day_num int not null,
+			time int not null,
+			PRIMARY KEY (id)
+			);";
+	maybe_create_table($tblName, $sql);
+
 
 	
 }
@@ -262,6 +278,7 @@ function cpj_time_handler(){
 			$selYear = intval($_POST['cur-year']);
 
 			$nineAm = mktime(9,0,0,$selMon,$selDay,$selYear);
+			$dow = date('w', mktime(0,0,0,$selMon,$selDay,$selYear));
 
 			$nineAmStr = date('g:i A D F j, Y',$nineAm);
 
@@ -279,8 +296,13 @@ function cpj_time_handler(){
 				$bookedTimeArr[] = $apptTimeArr[$p][0];
 			}//emnd for
 			
-			for($t = 9; $t < 17; $t++){
-				 
+			$avalTimesArr = $wpdb->get_results('select time from wp_cpj_schedule_day_time where day_num = '.$dow.' order by time');
+
+			if(count($avalTimesArr)>0){
+
+			foreach($avalTimesArr as $avalTime){
+			//for($t = 9; $t < 17; $t++){
+				 $t = $avalTime->time;
 				$timeNum = mktime($t,0,0,$selMon,$selDay,$selYear);
 				$timeStr = date('g:i A',$timeNum);
 				
@@ -303,27 +325,12 @@ function cpj_time_handler(){
 				
 				<?php
 
-				$timeNum = mktime($t,30,0,$selMon,$selDay,$selYear);
-				$timeStr = date('g:i A',$timeNum);
-
-				if(in_array($timeNum,$bookedTimeArr)){
-
-					$disabledClass = "time-btn-disabled";
-				
-				}
-					else{
-				
-						$disabledClass = "time-btn";
-				
-					}
-				
-				?>
-				
-				<button class="<?php echo esc_attr($disabledClass);?>" value="<?php echo esc_attr($timeNum);?>"><?php echo esc_html($timeStr);?></button>
-				
-				<?php
-
 			}//end for
+			}
+			else{
+
+				echo "No Times Available.";
+			}
 
 
 wp_die();

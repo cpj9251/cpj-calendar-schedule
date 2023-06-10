@@ -1,9 +1,10 @@
 /**
  * Plugin Name:       CPJ Calendar Scheduler
- * Description:       This block displays calendar to pick date then displays time available for booking
+ * Plugin URI:        https://cpauljarvis.com
+ * Description:       This block displays calendar to pick date then displays times available for appointment scheduling
  * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           0.1.0
+ * Version:           2.0.0
  * Author:            Paul Jarvis
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +13,7 @@
  * @package           cpj-calendar-schedule
  */
 
-const ajaxLoaderGif = '<img id="cpj-ajax-loader-gif" src="'+cpj_calendar_ajax_obj.site_url + '/cpj-calendar-schedule/ajax-loader/ajax-loader.gif">';
+const ajaxLoaderGif = '<img id="cpj-ajax-loader-gif" src="'+cpj_calendar_ajax_obj.site_url + '/cpj-calendar-appointment-scheduler/ajax-loader/ajax-loader.gif">';
 
 jQuery(document).ready(function($){
 
@@ -33,7 +34,7 @@ jQuery(document).ready(function($){
 
                 const request = $.ajax({
 					type: 'POST',
-					url:cpj_ajax_obj.ajax_url,
+					url:cpj_calendar_ajax_obj.ajax_url,
 					data: {'action' : 'cpj_calendar','cpj_calendar_time_nonce':cpj_calendar_ajax_obj.nonce},
 					error: function(e){ console.log(e);},
 					beforeSend: function(){
@@ -48,7 +49,9 @@ jQuery(document).ready(function($){
      }//end if block exists
 
         $("body").on("click",".next-mon-btn",function(){
-                 
+               
+                 $(".cpj-time-box").html('');
+           
             const newReq = $.ajax({
                 type: 'POST',
                 url:cpj_calendar_ajax_obj.ajax_url,
@@ -64,6 +67,7 @@ jQuery(document).ready(function($){
                 });
 
          newReq.done(function(msg){
+                
                 $(".cpj-calendar-box").html(msg);
          });//end request done
 
@@ -71,7 +75,9 @@ jQuery(document).ready(function($){
         });
 
         $("body").on("click",".prev-mon-btn",function(){
-                    
+                  
+                    $(".cpj-time-box").html('');
+           
             const newReqPrev = $.ajax({
                 type: 'POST',
                 url:cpj_calendar_ajax_obj.ajax_url,
@@ -87,6 +93,7 @@ jQuery(document).ready(function($){
                 });
 
          newReqPrev.done(function(msg){
+                
                 $(".cpj-calendar-box").html(msg);
          });//end request done
 
@@ -94,6 +101,9 @@ jQuery(document).ready(function($){
         });
 
         $("body").on("click",".mon-days",function(){
+
+            $(".mon-days").removeClass("mon-days-sel");
+            $(this).addClass("mon-days-sel");
 
             let dateStr = $("#cur-mon-name").val() +" "+$(this).html()+", "+$("#cur-year").val();
             let fullStr = '<div class="sel-date-display">' + dateStr + '</div>';

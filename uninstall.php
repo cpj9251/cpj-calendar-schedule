@@ -14,5 +14,7 @@ global $wpdb;
 $wpdb->query( "DROP TABLE IF EXISTS wp_cpj_appt_email_content" );
 $wpdb->query( "DROP TABLE IF EXISTS wp_cpj_appt_schedule" );
 $wpdb->query( "DROP TABLE IF EXISTS wp_cpj_appt_users" );
+$wpdb->query( "DROP TABLE IF EXISTS wp_cpj_schedule_day_time");
+
 
 
