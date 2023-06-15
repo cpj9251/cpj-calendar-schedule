@@ -202,7 +202,7 @@ function cpj_calendar_email_admin_handler(){
                                 array('%s','%s'),
                                 array('%d')
                             );
-        $msg = ($doUpdate)?"Success, E-mail Content has been updated":"Error E-mail content was not updated";
+        $msg = (false !== $doUpdate)?"Success, E-mail Content has been updated":"Error E-mail content was not updated";
 
 
 
@@ -228,7 +228,7 @@ function cpj_calendar_email_notify_admin_handler(){
     array('%s'),
     array('%d')
 );
-$msg = ($doUpdate2)?"Success, E-mail has been updated":"Error E-mail was not updated";
+$msg = (false !== $doUpdate2)?"Success, E-mail has been updated":"Error E-mail was not updated";
 
 echo esc_html($msg);
 
@@ -254,7 +254,7 @@ function cpj_calendar_email_from_admin_handler(){
     array('%d')
 );
 
-$msg = ($doUpdate2)?"Success, E-mail has been updated":"Error E-mail was not updated";
+$msg = (false !== $doUpdate2)?"Success, E-mail has been updated":"Error E-mail was not updated";
 
 echo esc_html($msg);
 
