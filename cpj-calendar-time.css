@@ -198,7 +198,7 @@
     clear:both;
     display:table;
  }
- label{
+ .cpj-label{
     font-size:16px;
     line-height:18px;
     color:#252222;
@@ -222,14 +222,14 @@
     width:80%;
     margin:20px auto;
 }
-select{
+.cpj-select{
     width:150px;
     border:1px solid #333333;
     border-width:2px 0px 0px 2px;
     border-radius:10px;
     height:26px;
 }
-option{
+.cpj-option{
     font-size:14px;
     line-height:18px;
 }
@@ -262,6 +262,7 @@ option{
     margin:20px auto;
     width:75%;
     min-height:200px;
+    color:#333333 !important;
 }
 #cpj-ajax-loader-gif{
     width:90px;

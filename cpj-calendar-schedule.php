@@ -354,36 +354,36 @@ $sel_date_time = intval($_POST['sel-date_time']);
 			<input type="hidden" name="sel-date-time" id="sel-date-time" value="<?php echo esc_attr($sel_date_time);?>">
 			<input type="hidden" name="action" value="cpj_cust_form_submit">
 			<div class="first-name-row form-row">
-				<label for="first-name" id="lbl-first-name">First Name:</label>
+				<label for="first-name" id="lbl-first-name" class="cpj-label">First Name:</label>
 				<div class="input-box">
 					<input type="text" name="first-name" id="first-name" class="cust-form-input" value="">
 				</div>
 			</div>
 			<div class="last-name-row form-row">
-				<label for="last-name" id="lbl-last-name">Last Name:</label>
+				<label for="last-name" id="lbl-last-name" class="cpj-label">Last Name:</label>
 				<div class="input-box">
 					<input type="text" name="last-name" id="last-name" class="cust-form-input" value="">
 				</div>
 			</div>
 			<div class="phone-row form-row">
-				<label for="phone" id="lbl-phone">Phone:</label>
+				<label for="phone" id="lbl-phone" class="cpj-label">Phone:</label>
 				<div class="input-box">
 					<input type="text" name="phone" id="phone" class="cust-form-input" value="">
 				</div>
 			</div>
 			<div class="email-row form-row">
-				<label for="cpj-cust-form-email" id="lbl-email">E-mail:</label>
+				<label for="cpj-cust-form-email" id="lbl-email" class="cpj-label">E-mail:</label>
 				<div class="input-box">
 					<input type="text" name="cpj-cust-form-email" id="cpj-cust-form-email" class="cust-form-input" value="">
 				</div>
 			</div>
 			<div class="pref-row form-row">
-				<label for="pref">Preferred Contact Method:</label>
+				<label for="pref" class="cpj-label">Preferred Contact Method:</label>
 				<div class="input-box">
-					<select name="pref">
-						<option value="Phone">Phone</option>
-						<option value="E-mail">E-Mail</option>
-						<option value="Text">Text</option>
+					<select name="pref" class="cpj-select">
+						<option value="Phone" class="cpj-option">Phone</option>
+						<option value="E-mail" class="cpj-option">E-Mail</option>
+						<option value="Text" class="cpj-option">Text</option>
 					</select>
 				</div>
 			</div>
