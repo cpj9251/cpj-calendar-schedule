@@ -1,24 +1,28 @@
 {
-	"name": "cpj-calendar-schedule",
-	"version": "0.1.0",
-	"description": "This block displays calendar to pick date then displays time available for booking",
-	"author": "Paul Jarvis",
-	"license": "GPL-2.0-or-later",
-	"main": "build/index.js",
-	"scripts": {
-		"build": "wp-scripts build",
-		"format": "wp-scripts format",
-		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js",
-		"packages-update": "wp-scripts packages-update",
-		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start"
-	},
-	"devDependencies": {
-		"@wordpress/scripts": "^25.4.0"
-	},
-	"dependencies": {
-		"@wordpress/element": "^5.4.0",
-		"react-calendar": "^4.0.0"
-	}
+  "name": "cpj-calendar-scheduler",
+  "version": "1.0.0",
+  "description": "Modern WordPress Appointment Scheduler",
+  "scripts": {
+    "start": "wp-scripts start --webpack-src-dir=assets/src/ --output-path=assets/build/ --webpack-copy-php",
+    "build": "wp-scripts build --webpack-src-dir=assets/src/ --output-path=assets/build/ --webpack-copy-php",
+    "lint": "eslint assets/src --ext .js,.ts,.tsx --max-warnings=0",
+    "lint:fix": "eslint --fix assets/src --ext .js,.ts,.tsx --max-warnings=0",
+    "lint:js": "wp-scripts lint-js",
+    "format": "wp-scripts format"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.0.0",
+    "@babel/preset-typescript": "^7.21.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@wordpress/api-fetch": "^7.45.0",
+    "@wordpress/components": "^30.6.5",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@ums/jslint": "^1.0.6",
+    "@ums/wordpress": "^2.0.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
 }

@@ -1,0 +1,35 @@
+{
+  "name": "cpj9251/cpj-calendar-scheduler",
+  "description": "Modern WordPress appointment scheduler",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "autoload": {
+    "psr-4": {
+      "CPJ\\CalendarScheduler\\": "src/"
+    }
+  },
+  "scripts": {
+    "lint": "vendor/bin/phpcs -s",
+    "lint:fix": "vendor/bin/phpcbf"
+  },
+  "repositories": [
+    {
+      "type":"composer",
+      "url":"https://gitlab.its.maine.edu/api/v4/group/207/-/packages/composer/packages.json"
+    }
+  ],
+  "require-dev": {
+    "ums/phplint": "^1.0.0",
+    "phpunit/phpunit": "^11.5",
+    "dg/bypass-finals": "^1.9"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "php-http/discovery": true
+    }
+  },
+  "require": {
+    "php": "^8.2"
+  }
+}

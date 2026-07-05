@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="UMS Directory">
+    <description>UMS Special Agent Linting Rules</description>
+
+    <!-- Use UMS ruleset -->
+    <rule ref="UMSWordPress"/>
+
+    <!-- Specify which files to scan -->
+    <file>./src</file>
+    <file>./cpj-calendar-scheduler.php</file>
+
+</ruleset>

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react",
+    "strict": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "outDir": "react/build",
+    "rootDir": "react/src",
+    // TODO: consumer-side workaround — @ums/wordpress has types but its package.json exports field
+    // doesn't reference them. Remove this paths entry if @ums/wordpress fixes its package.json.
+    "paths": {
+      "@ums/wordpress": ["node_modules/@ums/wordpress/lib/types/src/index"]
+    }
+  },
+  "include": ["react/src/**/*"],
+  "exclude": ["node_modules", "build"]
+}
