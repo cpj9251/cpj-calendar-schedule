@@ -2,7 +2,7 @@
 /**
  * Plugin Name: CPJ Calendar Scheduler
  * Plugin URI: https://cpauljarvis.com
- * Description: A plugin that manages and rovides user interface for making appointments thru a calendar
+ * Description: A plugin that manages and provides user interface for making appointments thru a calendar
  * Version: 1.0.0
  * Author: Paul Jarvis
  * Author URI: https://cpauljarvis.com
@@ -13,7 +13,7 @@ if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use CPJ\CalendarSchedule\Plugin;
+use CPJ\CalendarScheduler\Plugin;
 
 define( 'CPJ_CAL_SCHED_PLUGIN_BASE_URL', plugin_dir_url( __FILE__ ) );
 define( 'CPJ_CAL_SCHED_PLUGIN_BASE_PATH', plugin_dir_path( __FILE__ ) );
@@ -24,8 +24,9 @@ const CPJ_CAL_SCHED_PLUGIN_FILE = __FILE__;
 
 require_once CPJ_CAL_SCHED_DIR . '/vendor/autoload.php';
 
-if ( class_exists( 'Plugin' ) ) {
+if ( class_exists( 'CPJ\CalendarScheduler\Plugin' ) ) {
 	$cpjCalSchedPlugin = new Plugin();
+    //echo 'Plugin loaded';
 } else {
 	add_action(
 		'admin_notices',
@@ -33,5 +34,5 @@ if ( class_exists( 'Plugin' ) ) {
 			echo '<div class="notice notice-error"><p>CPJ Calendar Scheduler plugin did not load</p></div>';
 		}
 	);
-	wp_die();
+	//wp_die();
 }
