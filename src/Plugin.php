@@ -1,10 +1,8 @@
 <?php
 
-namespace CPJ\CalendarSchedule;
+namespace CPJ\CalendarScheduler;
 
-// use CPJ\CalendarSchedule\Admin\AdminPage;
-
-use src\Admin\AdminPage;
+use CPJ\CalendarScheduler\Admin\AdminPage;
 
 class Plugin {
 
