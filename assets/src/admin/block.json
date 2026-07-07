@@ -1,0 +1,9 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "cpj/cpj-calendar-scheduler-admin",
+  "version": "0.1.0",
+  "title": "CPJ Calendar Scheduler Admin",
+  "textdomain": "",
+  "editorScript": "file:./index.js"
+}

@@ -33,12 +33,12 @@ class AdminPage {
 	public static function addAdminMenu(): void {
 
 		add_menu_page(
-			'UMS Special Agent',
-			'UMS Special Agent',
+			'CPJ Appointment Scheduler',
+			'CPJ Scheduler',
 			'manage_options',
 			'cpj-cal-sched-admin-menu',
 			[ static::class, 'renderPage' ],
-			'calendar-alt',
+			'calendar',
 			30
 		);
 	}
@@ -47,11 +47,11 @@ class AdminPage {
 	 * @return void
 	 */
 	public static function enqueueAssets(): void {
-		$screen = get_current_screen();
+		/*$screen = get_current_screen();
 
 		if ( !$screen || $screen->id !== static::SCREEN_ID ) {
 			return;
-		}
+		}*/
 
 		wp_enqueue_style( 'wp-components' );
 
@@ -116,7 +116,10 @@ class AdminPage {
 	 * @return void
 	 */
 	public static function renderPage(): void {
-		echo 'CPJ CAL SCHEDULER ADMIN PAGE';
+		echo '<div class="wrap">';
+		echo '<h1>CPJ Appointment Scheduler</h1>';
+		echo '<div id="cpj-cal-sched-root"></div>';
+		echo '</div>';
 	}
 
 }
