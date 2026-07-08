@@ -1,13 +1,13 @@
 <?php
 
-namespace CPJ\CalendarScheduler\Admin;
+namespace CPJ\ApptScheduler\Admin;
 
 class AdminPage {
 
 	/**
 	 * @var string
 	 */
-	public const PAGE_SLUG = 'cpj_cal_sched';
+	public const PAGE_SLUG = 'cpj_appt_sched';
 
 	/**
 	 * @var string
@@ -17,7 +17,7 @@ class AdminPage {
 	/**
 	 * @var string
 	 */
-	public const SCRIPT_HANDLE = 'cpj-cal-sched-admin-script';
+	public const SCRIPT_HANDLE = 'cpj-appt-sched-admin-script';
 
 	/**
 	 * @return void
@@ -34,9 +34,9 @@ class AdminPage {
 
 		add_menu_page(
 			'CPJ Appointment Scheduler',
-			'CPJ Scheduler',
+			'CPJ Appt Scheduler',
 			'manage_options',
-			'cpj-cal-sched-admin-menu',
+			'cpj-appt-sched-admin-menu',
 			[ static::class, 'renderPage' ],
 			'calendar',
 			30
@@ -75,11 +75,11 @@ class AdminPage {
 		}
 		*/
 
-		$asset = include CPJ_CAL_SCHED_DIR . "/$assetFile";
+		$asset = include CPJ_APPT_SCHED_DIR . "/$assetFile";
 
 		wp_enqueue_script(
 			static::SCRIPT_HANDLE,
-			CPJ_CAL_SCHED_PLUGIN_BASE_URL . "/$scriptFile",
+			CPJ_APPT_SCHED_PLUGIN_BASE_URL . "/$scriptFile",
 			$asset['dependencies'],
 			$asset['version'],
 			[ 'in_footer' => true ]
@@ -96,7 +96,7 @@ class AdminPage {
 
 		wp_localize_script(
 			static::SCRIPT_HANDLE,
-			'cpjCalSchedAdminScript',
+			'cpjApptSchedAdminScript',
 			[
 				'nonce'   => wp_create_nonce( 'wp_rest' ),
 				'restURL' => 'cpj-cal-sched/v1/',
@@ -105,7 +105,7 @@ class AdminPage {
 
 		wp_enqueue_style(
 			static::SCRIPT_HANDLE . '-css',
-			CPJ_CAL_SCHED_PLUGIN_BASE_URL . "/$cssFile",
+			CPJ_APPT_SCHED_PLUGIN_BASE_URL . "/$cssFile",
 			[],
 			$asset['version'],
 			'all'

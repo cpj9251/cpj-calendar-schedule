@@ -7,6 +7,6 @@
 
     <!-- Specify which files to scan -->
     <file>./src</file>
-    <file>./cpj-calendar-scheduler.php</file>
+    <file>./cpj-appointment-scheduler.php</file>
 
 </ruleset>

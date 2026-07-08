@@ -1,6 +1,6 @@
 <?php
 
-namespace CPJ\CalendarScheduler\Rest;
+namespace CPJ\ApptScheduler\Rest;
 
 class AppointmentController {
 

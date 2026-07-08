@@ -1,6 +1,6 @@
 <?php
 
-namespace CPJ\CalendarScheduler\PostTypes;
+namespace CPJ\ApptScheduler\PostTypes;
 
 class AppointmentPostType {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace CPJ\CalendarScheduler\Blocks;
+namespace CPJ\ApptScheduler\Blocks;
 
 class SchedulerBlock {
 
