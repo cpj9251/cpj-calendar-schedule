@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: CPJ Appt Scheduler
+ * Plugin Name: CPJ Appointment Scheduler
  * Plugin URI: https://cpauljarvis.com
  * Description: A plugin that manages and provides user interface for making appointments thru a calendar
  * Version: 1.0.0
@@ -9,11 +9,11 @@
  * Requires: 6.9
  */
 
+use CPJ\ApptScheduler\Plugin;
+
 if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
-
-use CPJ\ApptScheduler\Plugin;
 
 define( 'CPJ_APPT_SCHED_PLUGIN_BASE_URL', plugin_dir_url( __FILE__ ) );
 define( 'CPJ_APPT_SCHED_PLUGIN_BASE_PATH', plugin_dir_path( __FILE__ ) );
@@ -24,9 +24,9 @@ const CPJ_APPT_SCHED_PLUGIN_FILE = __FILE__;
 
 require_once CPJ_APPT_SCHED_DIR . '/vendor/autoload.php';
 
-if ( class_exists( 'CPJ\ApptScheduler\Plugin' ) ) {
+if ( true ) {// class_exists( 'CPJ\ApptScheduler\Plugin' )
 	$cpjApptSchedPlugin = new Plugin();
-    //echo 'Plugin loaded';
+
 } else {
 	add_action(
 		'admin_notices',
@@ -34,5 +34,5 @@ if ( class_exists( 'CPJ\ApptScheduler\Plugin' ) ) {
 			echo '<div class="notice notice-error"><p>CPJ Appt Scheduler plugin did not load</p></div>';
 		}
 	);
-	//wp_die();
+	// wp_die();
 }

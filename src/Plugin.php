@@ -2,7 +2,8 @@
 
 namespace CPJ\ApptScheduler;
 
-use CPJ\ApptScheduler\Admin\AdminPage;
+use CPJ\ApptScheduler\CustomPostTypes\Appointments;
+use CPJ\ApptScheduler\Settings\Settings;
 
 class Plugin {
 
@@ -10,7 +11,8 @@ class Plugin {
 	 * Constructor
 	 */
 	public function __construct() {
-		AdminPage::init();
+		Settings::init();
+		Appointments::register();
 	}
 
 }

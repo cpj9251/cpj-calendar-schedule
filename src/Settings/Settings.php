@@ -1,8 +1,8 @@
 <?php
 
-namespace CPJ\ApptScheduler\Admin;
+namespace CPJ\ApptScheduler\Settings;
 
-class AdminPage {
+class Settings {
 
 	/**
 	 * @var string
@@ -17,29 +17,27 @@ class AdminPage {
 	/**
 	 * @var string
 	 */
-	public const SCRIPT_HANDLE = 'cpj-appt-sched-admin-script';
+	public const SCRIPT_HANDLE = 'cpj-appt-sched-settings-script';
 
 	/**
 	 * @return void
 	 */
 	public static function init(): void {
-		add_action( 'admin_menu', [ static::class, 'addAdminMenu' ] );
+		add_action( 'admin_menu', [ static::class, 'addSettingsMenu' ] );
 		add_action( 'admin_enqueue_scripts', [ static::class, 'enqueueAssets' ] );
 	}
 
 	/**
 	 * @return void
 	 */
-	public static function addAdminMenu(): void {
+	public static function addSettingsMenu(): void {
 
-		add_menu_page(
-			'CPJ Appointment Scheduler',
-			'CPJ Appt Scheduler',
+		add_options_page(
+			'Appointment Scheduler Settings',
+			'Appt Scheduler',
 			'manage_options',
-			'cpj-appt-sched-admin-menu',
-			[ static::class, 'renderPage' ],
-			'calendar',
-			30
+			'cpj-appt-sched-settings-menu',
+			[ static::class, 'renderSettingsPage' ]
 		);
 	}
 
@@ -47,7 +45,8 @@ class AdminPage {
 	 * @return void
 	 */
 	public static function enqueueAssets(): void {
-		/*$screen = get_current_screen();
+		/*
+		$screen = get_current_screen();
 
 		if ( !$screen || $screen->id !== static::SCREEN_ID ) {
 			return;
@@ -96,10 +95,10 @@ class AdminPage {
 
 		wp_localize_script(
 			static::SCRIPT_HANDLE,
-			'cpjApptSchedAdminScript',
+			'cpjApptSchedSettingsScript',
 			[
 				'nonce'   => wp_create_nonce( 'wp_rest' ),
-				'restURL' => 'cpj-cal-sched/v1/',
+				'restURL' => 'cpj-appt-sched/v1/',
 			]
 		);
 
@@ -115,10 +114,10 @@ class AdminPage {
 	/**
 	 * @return void
 	 */
-	public static function renderPage(): void {
+	public static function renderSettingsPage(): void {
 		echo '<div class="wrap">';
-		echo '<h1>CPJ Appointment Scheduler</h1>';
-		echo '<div id="cpj-cal-sched-root"></div>';
+		echo '<h1>Appointment Scheduler Settings</h1>';
+		echo '<div id="cpj-appt-sched-settings-root"></div>';
 		echo '</div>';
 	}
 

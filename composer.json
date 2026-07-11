@@ -1,5 +1,5 @@
 {
-  "name": "cpj9251/cpj-calendar-scheduler",
+  "name": "cpj9251/cpj-appointment-scheduler",
   "description": "Modern WordPress appointment scheduler",
   "type": "wordpress-plugin",
   "license": "GPL-2.0-or-later",
@@ -14,8 +14,8 @@
   },
   "repositories": [
     {
-      "type":"composer",
-      "url":"https://gitlab.its.maine.edu/api/v4/group/207/-/packages/composer/packages.json"
+      "type": "composer",
+      "url": "https://gitlab.its.maine.edu/api/v4/group/207/-/packages/composer/packages.json"
     }
   ],
   "require-dev": {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function AdminApp() {
+export default function SettingsApp() {
     return (
         <div>
             <h1>Hello, Admin!</h1>

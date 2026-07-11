@@ -10,7 +10,7 @@ type CPJApptSchedAdminScript = {
 }
 
 domReady( () => {
-    const rootEl = document.getElementById( 'cpj-cal-sched-root' );
+    const rootEl = document.getElementById( 'cpj-appt-sched-settings-root' );
 
     if ( !rootEl ) {
         return;
@@ -18,5 +18,5 @@ domReady( () => {
     // @ts-ignore
     apiFetch.use( apiFetch.createNonceMiddleware( window?.cpjApptSchedAdminScript?.nonce ) );
 
-    createRoot( rootEl ).render( <AdminApp/> );
+    createRoot( rootEl ).render( <SettingsApp/> );
 } );
