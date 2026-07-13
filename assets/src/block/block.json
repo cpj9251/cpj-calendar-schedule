@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "cpj-blocks/cpj-appointment-scheduler-block",
+  "version": "2.0.0",
+  "title": "CPJ Appointment Scheduler",
+  "category": "cpj_blocks",
+  "icon": "calendar-alt",
+  "description": "A custom WordPress Gutenberg block that allows a user schedule an appointment.",
+  "example": {},
+  "textdomain": "cpj-appt-sched",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "supports": {
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": true
+    }
+  },
+  "attributes": {}
+}

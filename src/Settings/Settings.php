@@ -34,7 +34,7 @@ class Settings {
 
 		add_options_page(
 			'Appointment Scheduler Settings',
-			'Appt Scheduler',
+			'Appointment Scheduler',
 			'manage_options',
 			'cpj-appt-sched-settings-menu',
 			[ static::class, 'renderSettingsPage' ]
@@ -45,6 +45,7 @@ class Settings {
 	 * @return void
 	 */
 	public static function enqueueAssets(): void {
+        error_log("screen = " . print_r( get_current_screen(), true ));
 		/*
 		$screen = get_current_screen();
 
@@ -54,9 +55,9 @@ class Settings {
 
 		wp_enqueue_style( 'wp-components' );
 
-		$assetFile  = 'assets/build/admin/index.asset.php';
-		$scriptFile = 'assets/build/admin/index.js';
-		$cssFile    = 'assets/build/admin/index.css';
+		$assetFile  = 'assets/build/settings/index.asset.php';
+		$scriptFile = 'assets/build/settings/index.js';
+		$cssFile    = 'assets/build/settings/index.css';
 
 		/*
 		foreach ( [ $assetFile, $scriptFile, $cssFile ] as $filePath ) {

@@ -1,16 +1,11 @@
 import domReady from '@wordpress/dom-ready';
 import { createRoot } from 'react-dom/client';
 import apiFetch from '@wordpress/api-fetch';
-import SettingsApp from './SettingsApp';
+import FrontEndApp from './FrontEndApp';
 import React from 'react';
 
-type CPJApptSchedAdminScript = {
-    nonce: string;
-    restURL: string;
-}
-
 domReady( () => {
-    const rootEl = document.getElementById( 'cpj-appt-sched-settings-root' );
+    const rootEl = document.getElementById( 'cpj-appt-sched-block-root' );
 
     if ( !rootEl ) {
         return;
@@ -18,5 +13,5 @@ domReady( () => {
     // @ts-ignore
     apiFetch.use( apiFetch.createNonceMiddleware( window?.cpjApptSchedAdminScript?.nonce ) );
 
-    createRoot( rootEl ).render( <SettingsApp/> );
+    createRoot( rootEl ).render( <FrontEndApp/> );
 } );

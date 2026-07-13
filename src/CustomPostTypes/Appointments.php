@@ -64,7 +64,7 @@ class Appointments {
 			'map_meta_cap'        => true,
 			'supports'            => [
 				'title',
-				'custom-fields',
+				'editor',
 			],
 			'taxonomies'          => [],
 		];

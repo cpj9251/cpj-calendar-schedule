@@ -24,7 +24,7 @@ const CPJ_APPT_SCHED_PLUGIN_FILE = __FILE__;
 
 require_once CPJ_APPT_SCHED_DIR . '/vendor/autoload.php';
 
-if ( true ) {// class_exists( 'CPJ\ApptScheduler\Plugin' )
+if (class_exists( 'CPJ\ApptScheduler\Plugin') ) {
 	$cpjApptSchedPlugin = new Plugin();
 
 } else {

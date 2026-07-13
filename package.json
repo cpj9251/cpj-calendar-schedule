@@ -11,17 +11,18 @@
     "format": "wp-scripts format"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^30.0.0",
     "@babel/preset-typescript": "^7.21.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@wordpress/api-fetch": "^7.45.0",
     "@wordpress/components": "^30.6.5",
+    "@wordpress/scripts": "^30.0.0",
     "typescript": "^6.0.3"
   },
   "dependencies": {
     "@ums/jslint": "^1.0.6",
     "@ums/wordpress": "^2.0.1",
+    "@wordpress/blocks": "^15.23.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   }
